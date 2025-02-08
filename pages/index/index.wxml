@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" placeholder="搜索动漫..." bindinput="onSearch" class="search-input" />
+  </view>
+
+  <!-- 分类标签 -->
+  <view class="category-bar">
+    <view class="category-item {{currentCategory === '全部' ? 'active' : ''}}" bindtap="changeCategory" data-category="全部">全部</view>
+    <view class="category-item {{currentCategory === '热门' ? 'active' : ''}}" bindtap="changeCategory" data-category="热门">热门</view>
+    <view class="category-item {{currentCategory === '新番' ? 'active' : ''}}" bindtap="changeCategory" data-category="新番">新番</view>
+    <view class="category-item {{currentCategory === '完结' ? 'active' : ''}}" bindtap="changeCategory" data-category="完结">完结</view>
+  </view>
+
+  <!-- 动漫列表 -->
+  <view class="anime-grid">
+    <view class="anime-card" wx:for="{{displayAnimeList}}" wx:key="id" bindtap="goToDetail" data-id="{{item.id}}">
+      <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
+      <view class="anime-info">
+        <text class="anime-title">{{item.title}}</text>
+        <view class="anime-meta">
+          <text class="anime-score">{{item.score}}分</text>
+          <text class="anime-status">{{item.status}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
