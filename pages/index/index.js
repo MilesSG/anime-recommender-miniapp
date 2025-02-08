@@ -1,66 +1,167 @@
-const { animeData } = require('../../data/anime.js')
+const app = getApp()
+
+// 测试数据
+const testAnimeList = [
+  {
+    id: 1,
+    title: '进击的巨人 最终季',
+    cover: 'https://cdn.myanimelist.net/images/anime/1948/120625.jpg',
+    score: 9.1,
+    category: '热门',
+    status: '完结',
+    description: '人类与巨人的最终决战，艾伦·耶格尔必须面对最终的抉择。'
+  },
+  {
+    id: 2,
+    title: '鬼灭之刃 刀匠村篇',
+    cover: 'https://cdn.myanimelist.net/images/anime/1286/131754.jpg',
+    score: 8.9,
+    category: '热门',
+    status: '连载中',
+    description: '炭治郎一行人前往刀匠村，寻找最强大的武器来对抗强大的恶魔。'
+  },
+  {
+    id: 3,
+    title: '咒术回战 第二季',
+    cover: 'https://cdn.myanimelist.net/images/anime/1792/138022.jpg',
+    score: 9.0,
+    category: '新番',
+    status: '连载中',
+    description: '五条悟的过去与宿傩的阴谋逐渐展开，咒术界面临前所未有的危机。'
+  },
+  {
+    id: 4,
+    title: '间谍过家家 第二季',
+    cover: 'https://cdn.myanimelist.net/images/anime/1027/138900.jpg',
+    score: 8.7,
+    category: '新番',
+    status: '连载中',
+    description: '和平使者"黄昏"继续带领他的假想家庭执行任务，同时维护着温馨的家庭生活。'
+  }
+]
 
 Page({
   data: {
     currentCategory: '全部',
-    searchKeyword: '',
     displayAnimeList: [],
-    allAnimeList: []
+    loading: false,
+    searchValue: '',
+    defaultCover: 'https://pic.imgdb.cn/item/65bde0a9871b83018ac3e9c2.jpg'
   },
 
-  onLoad: function() {
-    // 合并所有动漫数据
-    const allAnime = [
-      ...animeData.hotAnime,
-      ...animeData.newAnime,
-      ...animeData.completedAnime
-    ]
+  onLoad() {
+    // 使用测试数据
+    app.globalData.animeList = testAnimeList
+    this.loadAnimeList()
+  },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
+  },
+
+  // 加载动漫列表
+  loadAnimeList() {
+    const animeList = app.globalData.animeList || []
     this.setData({
-      allAnimeList: allAnime,
-      displayAnimeList: allAnime
+      displayAnimeList: this.filterAnimeList(animeList)
     })
   },
 
-  // 搜索功能
-  onSearch: function(e) {
-    const keyword = e.detail.value.toLowerCase()
-    this.setData({ searchKeyword: keyword })
-    this.filterAnime()
+  // 根据分类和搜索词过滤动漫列表
+  filterAnimeList(list) {
+    return list.filter(item => {
+      const matchCategory = this.data.currentCategory === '全部' || 
+                          item.category === this.data.currentCategory
+      const matchSearch = !this.data.searchValue || 
+                         item.title.toLowerCase().includes(this.data.searchValue.toLowerCase())
+      return matchCategory && matchSearch
+    })
+  },
+
+  // 搜索处理
+  onSearch(e) {
+    this.setData({
+      searchValue: e.detail.value
+    }, () => {
+      this.loadAnimeList()
+    })
   },
 
   // 切换分类
-  changeCategory: function(e) {
+  changeCategory(e) {
     const category = e.currentTarget.dataset.category
-    this.setData({ currentCategory: category })
-    this.filterAnime()
+    this.setData({
+      currentCategory: category
+    }, () => {
+      this.loadAnimeList()
+    })
   },
 
-  // 过滤动漫列表
-  filterAnime: function() {
-    let filteredList = this.data.allAnimeList
-
-    // 按分类过滤
-    if (this.data.currentCategory !== '全部') {
-      filteredList = filteredList.filter(anime => 
-        anime.category === this.data.currentCategory
-      )
-    }
-
-    // 按关键词搜索
-    if (this.data.searchKeyword) {
-      filteredList = filteredList.filter(anime =>
-        anime.title.toLowerCase().includes(this.data.searchKeyword)
-      )
-    }
-
-    this.setData({ displayAnimeList: filteredList })
+  // 图片加载错误处理
+  onImageError(e) {
+    const index = e.currentTarget.dataset.index
+    const key = `displayAnimeList[${index}].cover`
+    this.setData({
+      [key]: this.data.defaultCover
+    })
   },
 
   // 跳转到详情页
-  goToDetail: function(e) {
-    const animeId = e.currentTarget.dataset.id
+  goToDetail(e) {
+    const id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/detail/detail?id=${animeId}`
+      url: `/pages/detail/detail?id=${id}`
     })
+  },
+
+  // 导航功能
+  navigateToCategory() {
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    })
+  },
+
+  navigateToRanking() {
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    })
+  },
+
+  navigateToShort() {
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    })
+  },
+
+  navigateToProfile() {
+    wx.switchTab({
+      url: '/pages/profile/profile'
+    })
+  },
+
+  showMore() {
+    wx.showToast({
+      title: '更多内容开发中',
+      icon: 'none'
+    })
+  },
+
+  // 下拉刷新
+  onPullDownRefresh() {
+    this.loadAnimeList()
+    wx.stopPullDownRefresh()
+  },
+
+  // 触底加载更多
+  onReachBottom() {
+    // 预留加载更多功能
   }
 }) 

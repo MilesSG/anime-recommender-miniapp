@@ -1,3 +1,5 @@
 {
+  "navigationBarTitleText": "动漫推荐",
+  "enablePullDownRefresh": true,
   "usingComponents": {}
 }

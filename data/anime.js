@@ -46,6 +46,15 @@ const animeData = {
       category: '新番',
       status: '连载中',
       description: '讲述了一位不死者与人类少女的奇幻冒险故事。'
+    },
+    {
+      id: 8,
+      title: "海贼王",
+      cover: "https://cdn.myanimelist.net/images/anime/1000/110536.jpg",
+      score: 9.6,
+      category: "新番",
+      status: "连载中",
+      description: "路飞为了成为海贼王而展开的伟大冒险故事。"
     }
   ],
   completedAnime: [
@@ -66,6 +75,24 @@ const animeData = {
       category: '完结',
       status: '完结',
       description: '高中生夜神月捡到死亡笔记本，开启了一场正义与邪恶的较量。'
+    },
+    {
+      id: 9,
+      title: "命运石之门",
+      cover: "https://cdn.myanimelist.net/images/anime/1000/110539.jpg",
+      score: 9.3,
+      category: "完结",
+      status: "完结",
+      description: "疯狂科学家冈部伦太郎卷入时间旅行的惊险故事。"
+    },
+    {
+      id: 10,
+      title: "灌篮高手",
+      cover: "https://cdn.myanimelist.net/images/anime/1000/110540.jpg",
+      score: 9.5,
+      category: "完结",
+      status: "完结",
+      description: "樱木花道在篮球之路上的热血成长故事。"
     }
   ]
 };

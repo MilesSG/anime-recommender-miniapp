@@ -1,26 +1,73 @@
 <view class="container">
-  <!-- 搜索栏 -->
-  <view class="search-bar">
-    <input type="text" placeholder="搜索动漫..." bindinput="onSearch" class="search-input" />
+  <!-- 顶部搜索栏 -->
+  <view class="search-header">
+    <view class="search-bar">
+      <icon type="search" size="16"></icon>
+      <input type="text" placeholder="搜索动漫..." bindinput="onSearch" class="search-input" />
+    </view>
+    <view class="header-right">
+      <icon type="list" size="24"></icon>
+    </view>
   </view>
 
-  <!-- 分类标签 -->
-  <view class="category-bar">
-    <view class="category-item {{currentCategory === '全部' ? 'active' : ''}}" bindtap="changeCategory" data-category="全部">全部</view>
-    <view class="category-item {{currentCategory === '热门' ? 'active' : ''}}" bindtap="changeCategory" data-category="热门">热门</view>
-    <view class="category-item {{currentCategory === '新番' ? 'active' : ''}}" bindtap="changeCategory" data-category="新番">新番</view>
-    <view class="category-item {{currentCategory === '完结' ? 'active' : ''}}" bindtap="changeCategory" data-category="完结">完结</view>
+  <!-- 功能导航 -->
+  <view class="nav-section">
+    <view class="nav-item" bindtap="navigateToCategory">
+      <view class="nav-icon">
+        <icon type="success" size="28" color="#ff6b81"></icon>
+      </view>
+      <text>作品分类</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToRanking">
+      <view class="nav-icon">
+        <icon type="info" size="28" color="#ff6b81"></icon>
+      </view>
+      <text>作品排行</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToShort">
+      <view class="nav-icon">
+        <icon type="warn" size="28" color="#ff6b81"></icon>
+      </view>
+      <text>短篇推荐</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToProfile">
+      <view class="nav-icon">
+        <icon type="success_no_circle" size="28" color="#ff6b81"></icon>
+      </view>
+      <text>会员中心</text>
+    </view>
   </view>
 
-  <!-- 动漫列表 -->
-  <view class="anime-grid">
-    <view class="anime-card" wx:for="{{displayAnimeList}}" wx:key="id" bindtap="goToDetail" data-id="{{item.id}}">
-      <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
-      <view class="anime-info">
-        <text class="anime-title">{{item.title}}</text>
-        <view class="anime-meta">
-          <text class="anime-score">{{item.score}}分</text>
-          <text class="anime-status">{{item.status}}</text>
+  <!-- 私享定制分类 -->
+  <view class="custom-section">
+    <view class="section-header">
+      <text class="section-title">私享定制分类</text>
+      <text class="more-text" bindtap="showMore">更多 ></text>
+    </view>
+    
+    <!-- 分类标签 -->
+    <scroll-view class="category-scroll" scroll-x="true">
+      <view class="category-list">
+        <view class="category-item {{currentCategory === '全部' ? 'active' : ''}}" bindtap="changeCategory" data-category="全部">为你推荐</view>
+        <view class="category-item {{currentCategory === '热门' ? 'active' : ''}}" bindtap="changeCategory" data-category="热门">热门</view>
+        <view class="category-item {{currentCategory === '新番' ? 'active' : ''}}" bindtap="changeCategory" data-category="新番">新番</view>
+        <view class="category-item {{currentCategory === '完结' ? 'active' : ''}}" bindtap="changeCategory" data-category="完结">完结</view>
+      </view>
+    </scroll-view>
+
+    <!-- 动漫列表 -->
+    <view class="anime-grid">
+      <view class="anime-card" wx:for="{{displayAnimeList}}" wx:key="id" bindtap="goToDetail" data-id="{{item.id}}">
+        <image class="anime-cover" src="{{item.cover}}" mode="aspectFill" binderror="onImageError" data-index="{{index}}" lazy-load>
+          <view class="anime-tag" wx:if="{{item.status === '连载中'}}">连载</view>
+        </image>
+        <view class="anime-info">
+          <text class="anime-title">{{item.title}}</text>
+          <view class="anime-meta">
+            <view class="category-tag">{{item.category}}</view>
+            <text class="follow-count">{{item.score}}分</text>
+          </view>
+          <view class="member-tag" wx:if="{{item.isMember}}">会员8.5折</view>
         </view>
       </view>
     </view>

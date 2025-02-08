@@ -1,0 +1,55 @@
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-info-section">
+    <view class="user-info" wx:if="{{isLogin}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-detail">
+        <text class="nickname">{{userInfo.nickName}}</text>
+        <text class="subtitle">欢迎来到动漫推荐</text>
+      </view>
+    </view>
+    <view class="login-btn" wx:else bindtap="handleLogin">
+      <text>点击登录</text>
+    </view>
+  </view>
+
+  <!-- 功能区域 -->
+  <view class="feature-section">
+    <view class="feature-item" bindtap="navigateToFavorites">
+      <view class="feature-icon">❤️</view>
+      <text class="feature-text">我的收藏</text>
+      <text class="count">{{favorites.length}}</text>
+    </view>
+    <view class="feature-item" bindtap="navigateToHistory">
+      <view class="feature-icon">🕒</view>
+      <text class="feature-text">观看历史</text>
+      <text class="count">{{history.length}}</text>
+    </view>
+    <view class="feature-item" bindtap="navigateToRatings">
+      <view class="feature-icon">⭐</view>
+      <text class="feature-text">我的评分</text>
+      <text class="count">{{Object.keys(ratings).length}}</text>
+    </view>
+  </view>
+
+  <!-- 其他功能列表 -->
+  <view class="list-section">
+    <view class="list-item" bindtap="handleThemeSetting">
+      <text class="item-text">主题设置</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="list-item" bindtap="handleClearCache">
+      <text class="item-text">清除缓存</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="list-item" bindtap="handleAbout">
+      <text class="item-text">关于我们</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="version-info">
+    <text>当前版本 1.0.0</text>
+  </view>
+</view> 
