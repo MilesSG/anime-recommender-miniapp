@@ -24,17 +24,6 @@
     </view>
   </view>
 
-  <view class="chart-section">
-    <view class="chart-container">
-      <ec-canvas id="watchTimeChart" canvas-id="watchTimeChart" ec="{{ ec }}"></ec-canvas>
-    </view>
-  </view>
-
-  <view class="chart-section">
-    <view class="chart-container">
-      <ec-canvas id="userPreferencesChart" canvas-id="userPreferencesChart" ec="{{ ec }}"></ec-canvas>
-    </view>
-  </view>
 
   <view class="insights-section">
     <view class="section-title">个性化洞察</view>

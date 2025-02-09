@@ -31,8 +31,6 @@
 ![首页预览](assets/images/preview1.png)
 ![首页预览](assets/images/preview2.png)
 
-
-
 ## 🚀 快速开始
 
 1. 克隆项目
@@ -40,11 +38,16 @@
 git clone https://github.com/MilesSG/anime-recommender-miniapp.git
 ```
 
-2. 使用微信开发者工具打开项目
+2. 下载并安装[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 
-3. 在 project.config.json 中配置您的 AppID
+3. 在微信开发者工具中创建新项目：
+   * 使用本项目的 AppID：`wxaf086ce1fe91346d`
+   * 将克隆的代码复制到新建的项目目录中
 
-4. 编译运行即可
+4. 预览和调试：
+   * 在微信开发者工具中点击"预览"按钮
+   * 使用手机微信扫描生成的二维码即可在手机上进行预览
+   * 任何开发者都可以使用此方式在自己的手机上进行预览和调试
 
 ## 📦 项目结构
 

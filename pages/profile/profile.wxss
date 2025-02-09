@@ -120,4 +120,128 @@
   font-size: 24rpx;
   color: #999;
   padding: 30rpx 0;
+}
+
+/* 观看时段分布 */
+.viewing-time-section {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.time-distribution {
+  padding: 10rpx 0;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.time-label {
+  width: 80rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 40rpx;
+  background-color: #f5f5f5;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #ff6b81, #ff9ba8);
+  border-radius: 20rpx;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.progress-text {
+  margin-left: auto;
+  color: #fff;
+  font-size: 20rpx;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* 智能推荐部分 */
+.recommend-section {
+  background: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+
+.recommend-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.recommend-subtitle {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.recommend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.recommend-item {
+  display: flex;
+  padding: 20rpx;
+  background: #f8f9fa;
+  border-radius: 12rpx;
+}
+
+.anime-cover {
+  width: 160rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.anime-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.anime-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.anime-match {
+  font-size: 24rpx;
+  color: #ff6b81;
+  margin: 8rpx 0;
+}
+
+.anime-tags {
+  font-size: 24rpx;
+  color: #666;
 } 

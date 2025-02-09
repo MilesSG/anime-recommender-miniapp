@@ -1,3 +1,8 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {}
+}
+
 <view class="container">
   <!-- 用户信息区域 -->
   <view class="user-info-section">
@@ -51,5 +56,77 @@
   <!-- 版本信息 -->
   <view class="version-info">
     <text>当前版本 1.0.0</text>
+  </view>
+
+  <!-- 观看时段分布 -->
+  <view class="viewing-time-section">
+    <view class="section-title">观看时段分布</view>
+    <view class="time-distribution">
+      <view class="time-row" wx:for="{{timeDistribution}}" wx:key="hour">
+        <view class="time-label">{{item.hour}}时</view>
+        <view class="progress-bar-bg">
+          <view class="progress-bar" style="width: {{item.percentage}}%">
+            <text class="progress-text">{{item.percentage}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 观看偏好部分 -->
+  <view class="preference-section">
+    <view class="section-title">你的观看偏好</view>
+    
+    <!-- 类型偏好 -->
+    <view class="preference-block">
+      <view class="block-title">喜欢的类型</view>
+      <view class="tag-list">
+        <view class="tag-item" wx:for="{{preferredGenres}}" wx:key="genre">
+          <text class="tag-name">{{item.genre}}</text>
+          <text class="tag-count">{{item.count}}部</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 标签偏好 -->
+    <view class="preference-block">
+      <view class="block-title">常见标签</view>
+      <view class="tag-cloud">
+        <text wx:for="{{preferredTags}}" 
+              wx:key="tag" 
+              class="cloud-tag"
+              style="font-size: {{item.weight}}rpx; color: {{item.color}}">
+          {{item.tag}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 观看习惯 -->
+    <view class="preference-block">
+      <view class="block-title">观看习惯</view>
+      <view class="habit-list">
+        <view class="habit-item" wx:for="{{viewingHabits}}" wx:key="title">
+          <text class="habit-title">{{item.title}}</text>
+          <text class="habit-value">{{item.value}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 智能推荐部分 -->
+  <view class="recommend-section">
+    <view class="recommend-title">智能推荐</view>
+    <view class="recommend-subtitle">基于你的观看喜好，为你推荐</view>
+    
+    <view class="recommend-list">
+      <view class="recommend-item" wx:for="{{recommendations}}" wx:key="title">
+        <image class="anime-cover" src="{{item.coverUrl}}" mode="aspectFill"></image>
+        <view class="anime-info">
+          <view class="anime-title">{{item.title}}</view>
+          <view class="anime-match">匹配度 {{item.match}}%</view>
+          <view class="anime-tags">{{item.tags}}</view>
+        </view>
+      </view>
+    </view>
   </view>
 </view> 
