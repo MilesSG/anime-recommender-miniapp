@@ -28,10 +28,10 @@
 ## 📸 预览截图
 
 ### 首页展示
-![首页预览](assets/images/home_preview.jpg)
+![首页预览](assets/images/preview1.jpg)
+![首页预览](assets/images/preview2.jpg)
 
-### 数据分析
-![数据分析](assets/images/analysis_preview.jpg)
+
 
 ## 🚀 快速开始
 
