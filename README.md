@@ -28,8 +28,8 @@
 ## 📸 预览截图
 
 ### 首页展示
-![首页预览](assets/images/preview1.jpg)
-![首页预览](assets/images/preview2.jpg)
+![首页预览](assets/images/preview1.png)
+![首页预览](assets/images/preview2.png)
 
 
 
