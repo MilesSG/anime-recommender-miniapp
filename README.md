@@ -20,7 +20,7 @@
 
 ## 📸 预览截图
 
-*即将添加精美的应用截图*
+![f73bdb3a7b28753084e276324c956b3](D:\WechatFiles\WeChat Files\wxid_ijh4sql40i1921\FileStorage\Temp\f73bdb3a7b28753084e276324c956b3.jpg)
 
 ## 🚀 快速开始
 

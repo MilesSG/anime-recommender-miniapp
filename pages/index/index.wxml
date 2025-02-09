@@ -48,10 +48,18 @@
     <!-- 分类标签 -->
     <scroll-view class="category-scroll" scroll-x="true">
       <view class="category-list">
-        <view class="category-item {{currentCategory === '全部' ? 'active' : ''}}" bindtap="changeCategory" data-category="全部">为你推荐</view>
-        <view class="category-item {{currentCategory === '热门' ? 'active' : ''}}" bindtap="changeCategory" data-category="热门">热门</view>
-        <view class="category-item {{currentCategory === '新番' ? 'active' : ''}}" bindtap="changeCategory" data-category="新番">新番</view>
-        <view class="category-item {{currentCategory === '完结' ? 'active' : ''}}" bindtap="changeCategory" data-category="完结">完结</view>
+        <view class="category-item {{currentCategory === '为你推荐' ? 'active' : ''}}" 
+              bindtap="changeCategory" 
+              data-category="为你推荐">为你推荐</view>
+        <view class="category-item {{currentCategory === '热门' ? 'active' : ''}}" 
+              bindtap="changeCategory" 
+              data-category="热门">热门</view>
+        <view class="category-item {{currentCategory === '新番' ? 'active' : ''}}" 
+              bindtap="changeCategory" 
+              data-category="新番">新番</view>
+        <view class="category-item {{currentCategory === '完结' ? 'active' : ''}}" 
+              bindtap="changeCategory" 
+              data-category="完结">完结</view>
       </view>
     </scroll-view>
 

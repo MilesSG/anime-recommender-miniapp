@@ -10,89 +10,71 @@ const animeData = {
       description: '人类与巨人的最终决战，艾伦·耶格尔必须面对最终的抉择。'
     },
     {
-      id: 2,
-      title: '鬼灭之刃 刀匠村篇',
-      cover: 'https://cdn.myanimelist.net/images/anime/1286/131754.jpg',
-      score: 8.9,
-      category: '热门',
-      status: '连载中',
-      description: '炭治郎一行人前往刀匠村，寻找最强大的武器来对抗强大的恶魔。'
-    },
-    {
       id: 3,
       title: '咒术回战 第二季',
       cover: 'https://cdn.myanimelist.net/images/anime/1792/138022.jpg',
       score: 9.0,
-      category: '新番',
+      category: '热门',
       status: '连载中',
       description: '五条悟的过去与宿傩的阴谋逐渐展开，咒术界面临前所未有的危机。'
+    },
+    {
+      id: 15,
+      title: '地缚少年花子君 第二季',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1878/146291.webp?s=a4558c6d9b0d898fbdf76d77238e4494',
+      score: 8.6,
+      category: '热门',
+      status: '连载中',
+      description: '神秘学园里的七大不可思议之一，花子君的故事继续展开。'
     }
   ],
   newAnime: [
     {
-      id: 4,
-      title: '间谍过家家 第二季',
-      cover: 'https://cdn.myanimelist.net/images/anime/1027/138900.jpg',
-      score: 8.7,
+      id: 16,
+      title: '蜂蜜柠檬苏打',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1382/144602.webp?s=7dd322d90bab6352009b92fa8b0f7562',
+      score: 7.8,
       category: '新番',
       status: '连载中',
-      description: '和平使者"黄昏"继续带领他的假想家庭执行任务，同时维护着温馨的家庭生活。'
+      description: '清新治愈的校园恋爱故事，描绘青春期少男少女的甜蜜恋情。'
     },
     {
-      id: 5,
-      title: '葬送的芙莉莲',
-      cover: 'https://cdn.myanimelist.net/images/anime/1015/138006.jpg',
-      score: 8.8,
+      id: 17,
+      title: '最强辅助职业"咒术师"',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1683/145446.webp?s=1d737b86edc9a2d5a889b21deec27edf',
+      score: 7.5,
       category: '新番',
       status: '连载中',
-      description: '讲述了一位不死者与人类少女的奇幻冒险故事。'
+      description: '拥有强大辅助能力的咒术师，在异世界展开的冒险故事。'
     },
     {
-      id: 8,
-      title: "海贼王",
-      cover: "https://cdn.myanimelist.net/images/anime/1000/110536.jpg",
-      score: 9.6,
-      category: "新番",
-      status: "连载中",
-      description: "路飞为了成为海贼王而展开的伟大冒险故事。"
+      id: 18,
+      title: '超喜欢你的100个女朋友 第二季',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1093/145470.webp?s=7e3d45209edf85176e60a6c2ffd09af0',
+      score: 8.1,
+      category: '新番',
+      status: '连载中',
+      description: '继续讲述主角与众多女友之间的欢乐日常。'
     }
   ],
   completedAnime: [
     {
-      id: 6,
-      title: '钢之炼金术师 BROTHERHOOD',
-      cover: 'https://cdn.myanimelist.net/images/anime/1223/96541.jpg',
-      score: 9.2,
+      id: 19,
+      title: '离开A级队伍的我',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1167/146455.webp?s=afcfc84ff454f5cc97057eedaf1cdd24',
+      score: 7.7,
       category: '完结',
       status: '完结',
-      description: '艾德与阿尔冯斯兄弟寻找贤者之石，揭开炼金术的终极奥秘。'
+      description: '离开顶级队伍的主角，与曾经的学生们一起挑战迷宫的故事。'
     },
     {
-      id: 7,
-      title: '死亡笔记',
-      cover: 'https://cdn.myanimelist.net/images/anime/9/9453.jpg',
-      score: 8.9,
+      id: 20,
+      title: '与班上讨厌的女生结婚',
+      cover: 'https://cdn.myanimelist.net/r/216x326/images/anime/1775/147330.webp?s=8495a012b9dfc526b6191f8dcbd9410b',
+      score: 7.9,
       category: '完结',
       status: '完结',
-      description: '高中生夜神月捡到死亡笔记本，开启了一场正义与邪恶的较量。'
-    },
-    {
-      id: 9,
-      title: "命运石之门",
-      cover: "https://cdn.myanimelist.net/images/anime/1000/110539.jpg",
-      score: 9.3,
-      category: "完结",
-      status: "完结",
-      description: "疯狂科学家冈部伦太郎卷入时间旅行的惊险故事。"
-    },
-    {
-      id: 10,
-      title: "灌篮高手",
-      cover: "https://cdn.myanimelist.net/images/anime/1000/110540.jpg",
-      score: 9.5,
-      category: "完结",
-      status: "完结",
-      description: "樱木花道在篮球之路上的热血成长故事。"
+      description: '从互相讨厌到相爱，一对欢喜冤家的甜蜜爱情故事。'
     }
   ]
 };

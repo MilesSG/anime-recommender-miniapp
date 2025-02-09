@@ -1,4 +1,5 @@
 const app = getApp()
+const { animeData } = require('../../data/anime.js')
 
 // 测试数据
 const testAnimeList = [
@@ -42,7 +43,7 @@ const testAnimeList = [
 
 Page({
   data: {
-    currentCategory: '全部',
+    currentCategory: '为你推荐',
     displayAnimeList: [],
     loading: false,
     searchValue: '',
@@ -50,8 +51,13 @@ Page({
   },
 
   onLoad() {
-    // 使用测试数据
-    app.globalData.animeList = testAnimeList
+    // 将所有分类的动漫合并到一个列表中
+    const allAnime = [
+      ...animeData.hotAnime,
+      ...animeData.newAnime,
+      ...animeData.completedAnime
+    ]
+    app.globalData.animeList = allAnime
     this.loadAnimeList()
   },
 
@@ -75,10 +81,22 @@ Page({
   // 根据分类和搜索词过滤动漫列表
   filterAnimeList(list) {
     return list.filter(item => {
-      const matchCategory = this.data.currentCategory === '全部' || 
-                          item.category === this.data.currentCategory
+      // 处理搜索
       const matchSearch = !this.data.searchValue || 
                          item.title.toLowerCase().includes(this.data.searchValue.toLowerCase())
+      
+      // 处理分类
+      let matchCategory = true
+      if (this.data.currentCategory === '为你推荐') {
+        matchCategory = true // 显示所有动漫
+      } else if (this.data.currentCategory === '热门') {
+        matchCategory = item.category === '热门'
+      } else if (this.data.currentCategory === '新番') {
+        matchCategory = item.category === '新番'
+      } else if (this.data.currentCategory === '完结') {
+        matchCategory = item.category === '完结'
+      }
+
       return matchCategory && matchSearch
     })
   },
