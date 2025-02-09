@@ -1,0 +1,63 @@
+<view class="analytics-container">
+  <view class="header">
+    <text class="title">观看分析</text>
+    <text class="subtitle">了解你的追番习惯</text>
+  </view>
+
+  <view class="stats-cards">
+    <view class="stat-card">
+      <view class="stat-title">总观看时长</view>
+      <view class="stat-value">{{mockData.stats.totalTime}}分钟</view>
+      <view class="stat-trend up">↑ {{mockData.stats.timeGrowth}}%</view>
+    </view>
+    
+    <view class="stat-card">
+      <view class="stat-title">追番数量</view>
+      <view class="stat-value">{{mockData.stats.totalAnime}}部</view>
+      <view class="stat-trend up">↑ {{mockData.stats.animeGrowth}}%</view>
+    </view>
+    
+    <view class="stat-card">
+      <view class="stat-title">平均评分</view>
+      <view class="stat-value">{{mockData.stats.avgScore}}分</view>
+      <view class="stat-trend up">↑ {{mockData.stats.scoreGrowth}}</view>
+    </view>
+  </view>
+
+  <view class="chart-section">
+    <view class="chart-container">
+      <ec-canvas id="watchTimeChart" canvas-id="watchTimeChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+
+  <view class="chart-section">
+    <view class="chart-container">
+      <ec-canvas id="userPreferencesChart" canvas-id="userPreferencesChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+
+  <view class="insights-section">
+    <view class="section-title">个性化洞察</view>
+    <view class="insight-card">
+      <view class="insight-icon">📈</view>
+      <view class="insight-content">
+        <text class="insight-title">观看高峰期</text>
+        <text class="insight-desc">你在周末的观看时间明显增加，平均每天可以看3-4集动漫</text>
+      </view>
+    </view>
+    <view class="insight-card">
+      <view class="insight-icon">🎯</view>
+      <view class="insight-content">
+        <text class="insight-title">偏好类型</text>
+        <text class="insight-desc">你最喜欢热血和奇幻类型的动漫，占总观看时长的60%</text>
+      </view>
+    </view>
+    <view class="insight-card">
+      <view class="insight-icon">⭐</view>
+      <view class="insight-content">
+        <text class="insight-title">评分习惯</text>
+        <text class="insight-desc">你的评分标准较高，90%的作品评分在8分以上</text>
+      </view>
+    </view>
+  </view>
+</view> 

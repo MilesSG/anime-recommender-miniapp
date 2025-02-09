@@ -47,7 +47,34 @@ Page({
     displayAnimeList: [],
     loading: false,
     searchValue: '',
-    defaultCover: 'https://pic.imgdb.cn/item/65bde0a9871b83018ac3e9c2.jpg'
+    defaultCover: 'https://pic.imgdb.cn/item/65bde0a9871b83018ac3e9c2.jpg',
+    // 添加数据分析相关的数据
+    analysisData: {
+      totalWatchTime: 1680,
+      totalAnime: 28,
+      avgScore: 8.7,
+      timeGrowth: 12.5,
+      animeGrowth: 8.3,
+      scoreGrowth: 0.5
+    },
+    // 观看类型偏好数据
+    preferenceData: [
+      { type: '热血', value: 35 },
+      { type: '奇幻', value: 25 },
+      { type: '战斗', value: 20 },
+      { type: '冒险', value: 15 },
+      { type: '悬疑', value: 5 }
+    ],
+    // 观看时段分布数据
+    timeDistribution: [
+      { time: '6时', value: 45 },
+      { time: '9时', value: 30 },
+      { time: '12时', value: 25 },
+      { time: '15时', value: 60 },
+      { time: '18时', value: 85 },
+      { time: '21时', value: 95 },
+      { time: '24时', value: 70 }
+    ]
   },
 
   onLoad() {
@@ -137,25 +164,22 @@ Page({
     })
   },
 
-  // 导航功能
-  navigateToCategory() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
+  // 导航函数
+  navigateToAnalytics() {
+    wx.navigateTo({
+      url: '/pages/analytics/index'
     })
   },
 
-  navigateToRanking() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
+  navigateToTrends() {
+    wx.navigateTo({
+      url: '/pages/trends/index'
     })
   },
 
-  navigateToShort() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
+  navigateToRecommend() {
+    wx.navigateTo({
+      url: '/pages/recommend/index'
     })
   },
 

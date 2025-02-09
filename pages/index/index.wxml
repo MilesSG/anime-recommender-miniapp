@@ -2,43 +2,158 @@
   <!-- 顶部搜索栏 -->
   <view class="search-header">
     <view class="search-bar">
-      <icon type="search" size="16"></icon>
+      <image class="search-icon" src="/assets/icons/search.png" mode="aspectFit"></image>
       <input type="text" placeholder="搜索动漫..." bindinput="onSearch" class="search-input" />
-    </view>
-    <view class="header-right">
-      <icon type="list" size="24"></icon>
     </view>
   </view>
 
   <!-- 功能导航 -->
   <view class="nav-section">
-    <view class="nav-item" bindtap="navigateToCategory">
-      <view class="nav-icon">
-        <icon type="success" size="28" color="#ff6b81"></icon>
+    <view class="nav-item" bindtap="navigateToAnalytics">
+      <view class="nav-icon analytics">
+        <image src="/assets/icons/analytics.png" mode="aspectFit"></image>
       </view>
-      <text>作品分类</text>
+      <text>观看分析</text>
     </view>
-    <view class="nav-item" bindtap="navigateToRanking">
-      <view class="nav-icon">
-        <icon type="info" size="28" color="#ff6b81"></icon>
+    <view class="nav-item" bindtap="navigateToTrends">
+      <view class="nav-icon trends">
+        <image src="/assets/icons/trends.png" mode="aspectFit"></image>
       </view>
-      <text>作品排行</text>
+      <text>热度趋势</text>
     </view>
-    <view class="nav-item" bindtap="navigateToShort">
-      <view class="nav-icon">
-        <icon type="warn" size="28" color="#ff6b81"></icon>
+    <view class="nav-item" bindtap="navigateToRecommend">
+      <view class="nav-icon recommend">
+        <image src="/assets/icons/recommend.png" mode="aspectFit"></image>
       </view>
-      <text>短篇推荐</text>
+      <text>智能推荐</text>
     </view>
     <view class="nav-item" bindtap="navigateToProfile">
-      <view class="nav-icon">
-        <icon type="success_no_circle" size="28" color="#ff6b81"></icon>
+      <view class="nav-icon profile">
+        <image src="/assets/icons/profile.png" mode="aspectFit"></image>
       </view>
-      <text>会员中心</text>
+      <text>个人中心</text>
     </view>
   </view>
 
-  <!-- 私享定制分类 -->
+  <!-- 数据分析展示 -->
+  <view class="data-analysis">
+    <view class="data-header">观看数据分析</view>
+    
+    <!-- 基础数据卡片 -->
+    <view class="data-cards">
+      <view class="data-card">
+        <view class="card-value">1680<text class="unit">分钟</text></view>
+        <view class="card-label">总观看时长</view>
+        <view class="card-trend">↑12.5%</view>
+      </view>
+      <view class="data-card">
+        <view class="card-value">28<text class="unit">部</text></view>
+        <view class="card-label">追番数量</view>
+        <view class="card-trend">↑18.3%</view>
+      </view>
+      <view class="data-card">
+        <view class="card-value">8.7<text class="unit">分</text></view>
+        <view class="card-label">平均评分</view>
+        <view class="card-trend">↑10.5</view>
+      </view>
+    </view>
+
+    <!-- 观看类型偏好 -->
+    <view class="data-section">
+      <view class="section-title">观看类型偏好</view>
+      <view class="progress-list">
+        <view class="progress-item">
+          <view class="progress-info">
+            <text class="type">热血</text>
+            <text class="value">35%</text>
+          </view>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width: 35%"></view>
+          </view>
+        </view>
+        <view class="progress-item">
+          <view class="progress-info">
+            <text class="type">奇幻</text>
+            <text class="value">25%</text>
+          </view>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width: 25%"></view>
+          </view>
+        </view>
+        <view class="progress-item">
+          <view class="progress-info">
+            <text class="type">战斗</text>
+            <text class="value">20%</text>
+          </view>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width: 20%"></view>
+          </view>
+        </view>
+        <view class="progress-item">
+          <view class="progress-info">
+            <text class="type">冒险</text>
+            <text class="value">15%</text>
+          </view>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width: 15%"></view>
+          </view>
+        </view>
+        <view class="progress-item">
+          <view class="progress-info">
+            <text class="type">悬疑</text>
+            <text class="value">5%</text>
+          </view>
+          <view class="progress-bar">
+            <view class="progress-inner" style="width: 5%"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 观看时段分布 -->
+    <view class="data-section">
+      <view class="section-title">观看时段分布</view>
+      <view class="time-slots">
+        <view class="time-slot">
+          <text class="slot-value">45%</text>
+          <view class="slot-bar" style="height: 45%"></view>
+          <text class="slot-label">6时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">30%</text>
+          <view class="slot-bar" style="height: 30%"></view>
+          <text class="slot-label">9时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">25%</text>
+          <view class="slot-bar" style="height: 25%"></view>
+          <text class="slot-label">12时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">60%</text>
+          <view class="slot-bar" style="height: 60%"></view>
+          <text class="slot-label">15时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">85%</text>
+          <view class="slot-bar" style="height: 85%"></view>
+          <text class="slot-label">18时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">95%</text>
+          <view class="slot-bar" style="height: 95%"></view>
+          <text class="slot-label">21时</text>
+        </view>
+        <view class="time-slot">
+          <text class="slot-value">70%</text>
+          <view class="slot-bar" style="height: 70%"></view>
+          <text class="slot-label">24时</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分类标签和动漫列表 -->
   <view class="custom-section">
     <view class="section-header">
       <text class="section-title">私享定制分类</text>

@@ -13,7 +13,12 @@ const icons = {
   'article.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6ec.png',
   'discover.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6f2.png',
   'manga.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6f8.png',
-  'bookshelf.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6fe.png'
+  'bookshelf.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6fe.png',
+  'search.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6c2.png',
+  'analytics.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6c8.png',
+  'trends.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6ce.png',
+  'recommend.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6d4.png',
+  'profile.png': 'https://pic.imgdb.cn/item/65bde2d9871b83018ac7c6da.png'
 };
 
 const iconDir = path.join(__dirname, 'assets', 'icons');

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "热度趋势",
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas"
+  }
+}

@@ -1,0 +1,54 @@
+<view class="data-analysis">
+  <view class="chart-container">
+    <view class="chart-item">
+      <ec-canvas id="trendChart" canvas-id="trendChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+    
+    <view class="chart-item">
+      <ec-canvas id="similarityChart" canvas-id="similarityChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+    
+    <view class="chart-item">
+      <ec-canvas id="userPreferencesChart" canvas-id="userPreferencesChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+    
+    <view class="chart-item">
+      <ec-canvas id="watchTimeChart" canvas-id="watchTimeChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+
+  <view class="stats-cards">
+    <view class="stat-card">
+      <view class="stat-title">总观看时长</view>
+      <view class="stat-value">1680分钟</view>
+      <view class="stat-trend up">↑ 12.5%</view>
+    </view>
+    
+    <view class="stat-card">
+      <view class="stat-title">追番数量</view>
+      <view class="stat-value">28部</view>
+      <view class="stat-trend up">↑ 8.3%</view>
+    </view>
+    
+    <view class="stat-card">
+      <view class="stat-title">平均评分</view>
+      <view class="stat-value">8.7分</view>
+      <view class="stat-trend up">↑ 0.5</view>
+    </view>
+  </view>
+
+  <view class="recommendation-section">
+    <view class="section-title">根据你的观看历史推荐</view>
+    <view class="recommendation-list">
+      <view class="recommendation-item" wx:for="{{mockData.similarityData}}" wx:key="name">
+        <view class="similarity-info">
+          <view class="anime-title">{{item.name}}</view>
+          <view class="similarity-value">{{item.value}}% 相似度</view>
+        </view>
+        <view class="similarity-bar">
+          <view class="bar-fill" style="width: {{item.value}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,15 @@
+{
+  "name": "anime-recommender-miniapp",
+  "version": "1.0.0",
+  "description": "一个基于微信小程序的动漫推荐系统，提供优质动漫内容的展示和推荐。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "echarts-for-weixin": "^1.0.2"
+  }
+}

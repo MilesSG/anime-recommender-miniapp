@@ -1,0 +1,56 @@
+<!--pages/recommend/index.wxml-->
+<view class="recommend-container">
+  <view class="header">
+    <text class="title">智能推荐</text>
+    <text class="subtitle">基于你的观看喜好，为你推荐</text>
+  </view>
+
+  <view class="preference-section">
+    <view class="section-title">你的观看偏好</view>
+    <view class="preference-chart">
+      <ec-canvas id="preferenceChart" canvas-id="preferenceChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+
+  <view class="recommend-section">
+    <view class="section-title">个性化推荐</view>
+    <view class="recommend-list">
+      <view class="recommend-item" wx:for="{{recommendations}}" wx:key="id">
+        <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="anime-info">
+          <text class="anime-title">{{item.title}}</text>
+          <view class="anime-meta">
+            <text class="match-rate">匹配度 {{item.matchRate}}%</text>
+            <text class="category">{{item.category}}</text>
+          </view>
+          <text class="reason">{{item.reason}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="category-section">
+    <view class="section-title">分类推荐</view>
+    <scroll-view class="category-scroll" scroll-x="true">
+      <view class="category-list">
+        <view class="category-item {{currentCategory === item.name ? 'active' : ''}}" 
+              wx:for="{{categories}}" 
+              wx:key="name"
+              bindtap="changeCategory" 
+              data-category="{{item.name}}">
+          {{item.name}}
+          <text class="category-count">{{item.count}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="anime-grid">
+      <view class="anime-card" wx:for="{{categoryAnime}}" wx:key="id">
+        <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="anime-info">
+          <text class="anime-title">{{item.title}}</text>
+          <text class="anime-score">{{item.score}}分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

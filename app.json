@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/analytics/index",
+    "pages/trends/index",
+    "pages/recommend/index",
     "pages/detail/detail",
     "pages/profile/profile",
     "pages/favorites/favorites",

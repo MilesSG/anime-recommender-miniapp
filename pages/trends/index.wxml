@@ -1,0 +1,45 @@
+<!--pages/trends/index.wxml-->
+<view class="trends-container">
+  <view class="header">
+    <text class="title">热度趋势</text>
+    <text class="subtitle">实时掌握动漫热度变化</text>
+  </view>
+
+  <view class="trend-cards">
+    <view class="trend-card">
+      <view class="trend-title">本周热度上升最快</view>
+      <view class="anime-list">
+        <view class="anime-item" wx:for="{{topTrends}}" wx:key="id">
+          <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
+          <view class="anime-info">
+            <text class="anime-title">{{item.title}}</text>
+            <text class="trend-value up">↑{{item.growth}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="chart-section">
+    <view class="chart-container">
+      <ec-canvas id="trendChart" canvas-id="trendChart" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+
+  <view class="ranking-section">
+    <view class="section-title">热度排行榜</view>
+    <view class="ranking-list">
+      <view class="ranking-item" wx:for="{{rankings}}" wx:key="id">
+        <view class="rank-number">{{index + 1}}</view>
+        <image class="anime-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="anime-info">
+          <text class="anime-title">{{item.title}}</text>
+          <text class="watch-count">{{item.watchCount}}人在看</text>
+        </view>
+        <view class="trend-tag {{item.trend === 'up' ? 'up' : 'down'}}">
+          {{item.trend === 'up' ? '↑' : '↓'}}{{item.changeRate}}%
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智能推荐",
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas"
+  }
+}
