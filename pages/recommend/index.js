@@ -137,18 +137,30 @@ Page({
 
   initChart() {
     this.preferenceChart = this.selectComponent('#preferenceChart');
-    this.preferenceChart.init((canvas, width, height) => {
-      const chart = wx.createChart(canvas, width, height);
+    this.preferenceChart.init((canvas, width, height, dpr) => {
+      const chart = echarts.init(canvas, null, {
+        width: width,
+        height: height,
+        devicePixelRatio: dpr
+      });
+      
       const option = {
+        backgroundColor: '#ffffff',
         title: {
           text: '观看偏好分布',
-          left: 'center'
+          left: 'center',
+          top: 20,
+          textStyle: {
+            color: '#333333',
+            fontSize: 14
+          }
         },
         tooltip: {
           trigger: 'item',
           formatter: '{b}: {c}%'
         },
         series: [{
+          name: '观看偏好',
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
@@ -159,18 +171,25 @@ Page({
           },
           label: {
             show: true,
-            formatter: '{b}\n{c}%'
+            position: 'outside',
+            formatter: '{b}\n{c}%',
+            color: '#666666',
+            fontSize: 12
           },
           emphasis: {
             label: {
               show: true,
-              fontSize: '18',
+              fontSize: 14,
               fontWeight: 'bold'
             }
           },
-          data: this.data.preferences
+          data: this.data.preferences.map(item => ({
+            name: item.name,
+            value: item.value
+          }))
         }]
       };
+      
       chart.setOption(option);
       return chart;
     });

@@ -31,15 +31,14 @@
 
 .preference-section {
   background: #fff;
-  border-radius: 16rpx;
-  padding: 20rpx;
-  margin-bottom: 30rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
 }
 
 .preference-chart {
-  height: 400rpx;
   width: 100%;
+  height: 400rpx;
 }
 
 .recommend-section {
@@ -175,4 +174,9 @@
 .anime-score {
   font-size: 24rpx;
   color: #ff6b81;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
 }
